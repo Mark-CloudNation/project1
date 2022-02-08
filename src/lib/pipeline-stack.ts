@@ -8,7 +8,7 @@ export class PipelineStack extends cdk.Stack {
 
         // create a Codecommit repository called "app-repo"
         const pipeline = new CodePipeline(this, 'Pipeline', {
-            pipelineName: 'MyPipeline',
+            pipelineName: 'MarkPipeline',
             synth: new ShellStep('Synth', {
                 input: CodePipelineSource.gitHub('Mark-CloudNation/project1', 'master'),
                 commands: ['npm ci', 'npm run build', 'npx cdk synth']
