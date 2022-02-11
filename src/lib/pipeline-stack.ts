@@ -10,7 +10,7 @@ export class PipelineStack extends cdk.Stack {
       pipelineName: 'markPipeline',
       synth: new ShellStep('Synth', {
         input: CodePipelineSource.gitHub('Mark-CloudNation/project1', 'master', {
-            authentication: cdk.SecretValue.plainText('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'),
+            authentication: cdk.SecretValue.plainText('arn:aws:secretsmanager:eu-west-1:227615387827:secret:mark/github-u1Yz2q'),
         }),
         commands: ['npm ci', 'npm run build', 'npx cdk synth'],
       }),
