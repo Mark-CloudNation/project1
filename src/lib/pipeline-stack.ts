@@ -1,6 +1,6 @@
 import * as cdk from 'aws-cdk-lib';
-import { Construct } from 'constructs';
 import { CodePipeline, CodePipelineSource, ShellStep } from 'aws-cdk-lib/pipelines';
+import { Construct } from 'constructs';
 
 export class PipelineStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -10,8 +10,8 @@ export class PipelineStack extends cdk.Stack {
       pipelineName: 'markPipeline',
       synth: new ShellStep('Synth', {
         input: CodePipelineSource.gitHub('Mark-CloudNation/project1', 'main'),
-        commands: ['npm ci', 'npm run build', 'npx cdk synth']
-      })
+        commands: ['npm ci', 'npm run build', 'npx cdk synth'],
+      }),
     });
   }
 }

@@ -9,7 +9,7 @@ new PipelineStack(app, 'MyPipelineStack', {
   env: {
     account: '227615387827',
     region: 'eu-west-1',
-  }
+  },
 });
 
 app.synth();
